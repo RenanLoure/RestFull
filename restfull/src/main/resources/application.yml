@@ -1,0 +1,25 @@
+server:
+  port: 8087
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/Restfull
+    username: postgres
+    password: 1299
+    driver-class-name: org.postgresql.Driver
+
+  flyway:
+    baseline-on-migrate: true
+    locations: classpath:db/migration
+
+  jpa:
+    show-sql: true
+
+  jackson:
+    deserialization:
+      fail-on-unknown-properties: true
+
+springdoc:
+  pathsToMatch: /api/**/v1/**
+  swagger-ui:
+    use-root-path: true
