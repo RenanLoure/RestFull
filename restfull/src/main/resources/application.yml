@@ -1,3 +1,5 @@
+# cors:
+#   originPatterns: http://localhost:3000,http://localhost:8087
 server:
   port: 8087
 
