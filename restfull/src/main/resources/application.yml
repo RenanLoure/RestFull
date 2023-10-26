@@ -1,8 +1,12 @@
-# cors:
-#   originPatterns: http://localhost:3000,http://localhost:8087
+cors:
+  originPatterns: http://localhost:3000,http://localhost:8087
+security:
+  jwt:
+    token:
+      secret-key: 53cr37
+      expire-lenght: 3600000
 server:
   port: 8087
-
 spring:
   datasource:
     url: jdbc:postgresql://localhost:5432/Restfull
@@ -22,6 +26,8 @@ spring:
       fail-on-unknown-properties: true
 
 springdoc:
-  pathsToMatch: /api/**/v1/**
+  pathsToMatch:
+    - /auth/**
+    - /api/**/v1/**
   swagger-ui:
     use-root-path: true
